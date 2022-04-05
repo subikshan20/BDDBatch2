@@ -37,11 +37,11 @@ namespace MarsRovers.Steps
             rover.Turn(turndirection);
         }
 
-        //[Then(@"rover should be at (\d+), (\d+)")]
-        //public void ThenRoverShouldBeAt(int x, int y)
-        //{
-        //    rover.GetPosition().Should().Be(new Point(x, y));
-        //}
+        [Then(@"rover should be at (\d+), (\d+)")]
+        public void ThenRoverShouldBeAt(int x, int y)
+        {
+            rover.GetPosition().Should().Be(new Point(x, y));
+        }
 
         [Then(@"rover should be facing ([NEWS]{1})")]
         public void ThenRoverShouldBeFacingE(string direction)

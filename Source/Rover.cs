@@ -27,7 +27,6 @@ namespace MarsRovers
             return _direction;
         }
 
-      
         internal void Turn(string turndirection)
         {
             switch(_direction)
@@ -40,7 +39,7 @@ namespace MarsRovers
                     }
 
                     else {
-                        _direction = "W";
+                        _direction = "E";
                         break;
                     }
                 case "S":

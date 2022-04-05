@@ -70,25 +70,91 @@ namespace MarsRovers.UnitTest
         }
 
         [Test]
-        public void RoverShouldTurnLeft()
+        public void RoverShouldTurnLeftFromWest()
         {
             Rover rover = new Rover();
             rover.SetDirection("W");
             rover.SetPosition(new Point(3, 6));
             rover.Turn("L");
             Assert.AreEqual("S", rover.GetDirection());
-
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
         }
 
         [Test]
-        public void RoverShouldTurnRight()
+        public void RoverShouldTurnRightFromWest()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("W");
+            rover.SetPosition(new Point(3, 6));
+            rover.Turn("R");
+            Assert.AreEqual("N", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
+        }
+
+        [Test]
+        public void RoverShouldTurnRightFromSouth()
         {
             Rover rover = new Rover();
             rover.SetDirection("S");
             rover.SetPosition(new Point(3, 6));
             rover.Turn("R");
             Assert.AreEqual("W", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
+        }
 
+        [Test]
+        public void RoverShouldTurnLeftFromSouth()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("S");
+            rover.SetPosition(new Point(3, 6));
+            rover.Turn("L");
+            Assert.AreEqual("E", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
+        }
+
+        [Test]
+        public void RoverShouldTurnLeftFromEast()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("E");
+            rover.SetPosition(new Point(3, 6));
+            rover.Turn("L");
+            Assert.AreEqual("N", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
+        }
+
+        [Test]
+        public void RoverShouldTurnRightFromEast()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("E");
+            rover.SetPosition(new Point(3, 6));
+            rover.Turn("R");
+            Assert.AreEqual("S", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
+        }
+
+        [Test]
+        public void RoverShouldTurnRightFromNorth()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("N");
+            rover.SetPosition(new Point(3, 6));
+            rover.Turn("R");
+            Assert.AreEqual("E", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
+        }
+
+        [Test]
+        public void RoverShouldTurnLeftFromNorth()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("N");
+            rover.SetPosition(new Point(3, 6));
+            rover.Turn("L");
+            Assert.AreEqual("W", rover.GetDirection());
+            Assert.AreEqual(new Point(3, 6), rover.GetPosition());
         }
     }
  }
