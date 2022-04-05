@@ -27,6 +27,60 @@ namespace MarsRovers
             return _direction;
         }
 
+      
+        internal void Turn(string turndirection)
+        {
+            switch(_direction)
+            {
+                case "N":
+                    if(turndirection == "L")
+                    {
+                        _direction = "W";
+                        break;
+                    }
+
+                    else {
+                        _direction = "W";
+                        break;
+                    }
+                case "S":
+                    if (turndirection == "L")
+                    {
+                        _direction = "E";
+                        break;
+                    }
+
+                    else
+                    {
+                        _direction = "W";
+                        break;
+                    }
+                case "E":
+                    if (turndirection == "L")
+                    {
+                        _direction = "N";
+                        break;
+                    }
+
+                    else
+                    {
+                        _direction = "S";
+                        break;
+                    }
+                case "W":
+                    if (turndirection == "L")
+                    {
+                        _direction = "S";
+                        break;
+                    }
+
+                    else
+                    {
+                        _direction = "N";
+                        break;
+                    }
+            }
+        }
         internal void Move()
         {
             switch (_direction)
